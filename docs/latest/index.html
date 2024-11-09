@@ -259,6 +259,10 @@ Error message and password prompt
 
 <li>Chapter4</li>
 
+<li>Chapter5</li>
+
+<li>Chapter6</li>
+
 <li>Charter</li>
 
 <li>Section101</li>
@@ -429,6 +433,48 @@ Error message and password prompt
 
 <li>Section411</li>
 
+<li>Section501</li>
+
+<li>Section502</li>
+
+<li>Section601</li>
+
+<li>Section602</li>
+
+<li>Section603</li>
+
+<li>Section603A</li>
+
+<li>Section604</li>
+
+<li>Section605</li>
+
+<li>Section606</li>
+
+<li>Section606A</li>
+
+<li>Section606B</li>
+
+<li>Section606C</li>
+
+<li>Section606D</li>
+
+<li>Section606E</li>
+
+<li>Section606F</li>
+
+<li>Section606G</li>
+
+<li>Section606H</li>
+
+<li>Section606I</li>
+
+<li>Section606J</li>
+
+<li>Section607</li>
+
+<li>Section608</li>
+
 <li>TableOfContents</li>
 
 <li>TiddlyWiki</li>
@@ -464,9 +510,9 @@ Error message and password prompt
 ,
 {"title":"$:/_/atc/procedures/sub-subsections","code-body":"yes","created":"20241109060008488","modified":"20241109191128711","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure sub-subsections(section, subsection)\n\u003C$list filter=\"[tag[Sub-subsection]section\u003Csection>subsection\u003Csubsection>!has[draft.of]]\" >\n  \u003C$let \n    parent ={{{ [{!!section}] [{!!subsection}] [[(]] [{!!sub-subsection}] [[)]] +[join[]] }}}\n    currentTiddler={{{ [\u003Cparent>addprefix[Section]] }}}\n  >\n    \u003Cdiv class=\"subsection\">\n      \u003Cdiv class=\"ss-name\">\u003C$link>{{!!sub-subsection}}. \u003C/$link>\u003C/div>\n      \u003Cdiv class=\"ss-body\">\u003C$transclude mode=\"block\"/>\u003C/div>\n    \u003C/div>\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
 ,
-{"title":"$:/_/atc/procedures/subsections","code-body":"yes","created":"20241109040904621","modified":"20241109182756548","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure subsections(parent)\n\u003C$list filter=\"[tag[Subsection]section\u003Cparent>!has[draft.of]]\" >\n  \u003C$let \n    section={{{ [{!!section}] [{!!subsection}] +[join[]] }}} \n    currentTiddler={{{ [\u003Csection>addprefix[Section]] }}}\n  > \n    \u003Cdiv class=\"subsection\">\n      \u003Cdiv class=\"ss-name\">\u003C$link>{{!!subsection}}. \u003C/$link>\u003C/div>\n      \u003Cdiv class=\"ss-body\">\u003C$transclude mode=\"block\"/>\u003C/div>\n    \u003C/div>\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
+{"title":"$:/_/atc/procedures/subsections","code-body":"yes","created":"20241109040904621","modified":"20241109231556399","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure subsections(parent)\n\u003C$list filter=\"[tag[Subsection]section\u003Cparent>!has[draft.of]]\" >\n  \u003C$let currentTiddler={{{ [[Section]] [{!!section}] [{!!subsection}] +[join[]] }}}>\n    \u003Cdiv class=\"subsection\">\n      \u003Cdiv class=\"ss-name\">\u003C$link>{{!!subsection}}. \u003C/$link>\u003C/div>\n      \u003Cdiv class=\"ss-body\">\u003C$transclude mode=\"block\"/>\u003C/div>\n    \u003C/div>\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
 ,
-{"title":"$:/_/atc/reader-mode/setReadOnlyOnReload","created":"20241109162018975","modified":"20241109203603485","tags":"$:/tags/StartupActionXXX","type":"text/vnd.tiddlywiki","text":"\u003C!-- Put ReaderMode on, if not running inside Node.  Can cancel with CTRL-Shift-/ -->\n\n\u003C$list filter=\"[[$:/plugins/tiddlywiki/tiddlyweb]is[missing]]\">\n\n\u003C$action-setfield $tiddler=\"$:/status/IsReaderMode\" $field=text $value=\"yes\"/>\n\u003C$action-setfield $tiddler=\"$:/config/DragAndDrop/Enable\" $field=text $value=\"no\"/>\n\u003C$action-listops $tiddler=\"$:/core/ui/SideBar/Tools\" $field=tags $subfilter=\" +[remove[$:/tags/SideBar]]\"/>\n\u003C$action-listops $tiddler=\"$:/core/ui/SideBar/More\" $field=tags $subfilter=\" +[remove[$:/tags/SideBar]]\"/>\n\u003C$action-listops $tiddler=\"$:/config/DragAndDrop/Enable\" $field=text $value=\"no\"/>\n\n\u003C/$list>","revision":"0","bag":"default"}
+{"title":"$:/_/atc/reader-mode/setReadOnlyOnReload","code-body":"yes","created":"20241109162018975","modified":"20241109232828813","tags":"$:/tags/StartupAction","type":"text/vnd.tiddlywiki","text":"\u003C!-- Put ReaderMode on, if not running inside Node.  Can cancel with CTRL-Shift-/ -->\n\n\u003C$list filter=\"[[$:/plugins/tiddlywiki/tiddlyweb]is[missing]]\">\n\n\u003C$action-setfield $tiddler=\"$:/status/IsReaderMode\" $field=text $value=\"yes\"/>\n\u003C$action-setfield $tiddler=\"$:/config/DragAndDrop/Enable\" $field=text $value=\"no\"/>\n\u003C$action-listops $tiddler=\"$:/core/ui/SideBar/Tools\" $field=tags $subfilter=\" +[remove[$:/tags/SideBar]]\"/>\n\u003C$action-listops $tiddler=\"$:/core/ui/SideBar/More\" $field=tags $subfilter=\" +[remove[$:/tags/SideBar]]\"/>\n\u003C$action-listops $tiddler=\"$:/config/DragAndDrop/Enable\" $field=text $value=\"no\"/>\n\n\u003C/$list>","revision":"0","bag":"default"}
 ,
 {"title":"$:/_/atc/reader-mode/styles","code-body":"yes","created":"20241109161048027","modified":"20241109162043325","tags":"$:/tags/Stylesheet","type":"text/vnd.tiddlywiki","text":"\u003C!-- this tiddler is a modified $:/plugins/tiddlywiki/tiddlyweb/readonly from Tiddlyweb plugin, via kookma/utility -->\n\\define button-selector(title)\nbutton.$title$, .tc-drop-down button.$title$, div.$title$\n\\end\n\n\\define hide-edit-controls()\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fclone>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fdelete>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fedit>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fnew-here>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fnew-journal-here>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fimport>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fmanager>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fnew-image>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fnew-journal>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fnew-tiddler>>{\n\tdisplay: none;\n}\n\\end\n\n\\define hide-user-selected-controls()\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fcontrol-panel>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Fsave-wiki>>,\n\u003C\u003Cbutton-selector tc-btn-\\%24\\%3A\\%2Fcore\\%2Fui\\%2FButtons\\%2Finfo>> {\n\tdisplay: none;\n}\n\\end\n\n\u003C$reveal state=\"$:/status/IsReaderMode\" type=\"match\" text=\"yes\" default=\"no\"> \u003C!-- by default reader mode is off -->\n\n\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline macrocallblock\n\n\u003C\u003Chide-edit-controls>>\n\u003C\u003Chide-user-selected-controls>>\n\u003C/$reveal>","revision":"0","bag":"default"}
 ,
@@ -554,7 +600,7 @@ Error message and password prompt
 ,
 {"title":"$:/themes/tiddlywiki/vanilla/options/stickytitles","created":"20240221172401751","modified":"20240221172401751","type":"text/vnd.tiddlywiki","text":"yes","revision":"0","bag":"default"}
 ,
-{"title":"About","caption":"About","created":"20230326150914405","modified":"20241109172731981","tags":"","type":"text/vnd.tiddlywiki","version":"0.3.0+","text":"This is an online version of Andover's [[Town Charter|https://www.andoverconnecticut.org/sites/g/files/vyhlif5346/f/uploads/andover_town_charter_2022_0.pdf]].  It is designed to make it easier to search and to share links to its many chapters, sections, subsections, and even sub-subsections.\n\n!! Credits\n\nThe charter was built over many years by the citizens of Andover through various [[Charter Revision Commissions|https://www.andoverconnecticut.org/charter-revision-commission]], with help from their attorney.  The [[Town Clerk|https://www.andoverconnecticut.org/town-clerk]] maintains the document.\n\nThis online version was created by [[Scott Sauyet|mailto:scott@sauyet.com]].\n\n!! Technology\n\n{{TiddlyWiki}}\n\n!! Version\n\n{{!!version}}\n\n","revision":"0","bag":"default"}
+{"title":"About","caption":"About","created":"20230326150914405","modified":"20241109172731981","tags":"","type":"text/vnd.tiddlywiki","version":"0.4npm.0+","text":"This is an online version of Andover's [[Town Charter|https://www.andoverconnecticut.org/sites/g/files/vyhlif5346/f/uploads/andover_town_charter_2022_0.pdf]].  It is designed to make it easier to search and to share links to its many chapters, sections, subsections, and even sub-subsections.\n\n!! Credits\n\nThe charter was built over many years by the citizens of Andover through various [[Charter Revision Commissions|https://www.andoverconnecticut.org/charter-revision-commission]], with help from their attorney.  The [[Town Clerk|https://www.andoverconnecticut.org/town-clerk]] maintains the document.\n\nThis online version was created by [[Scott Sauyet|mailto:scott@sauyet.com]].\n\n!! Technology\n\n{{TiddlyWiki}}\n\n!! Version\n\n{{!!version}}\n\n","revision":"0","bag":"default"}
 ,
 {"title":"Chapter1","caption":"Chapter I. INCORPORATION AND GENERAL POWERS","chapter":"1","created":"20241109045043935","modified":"20241109180937665","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 1>>\n","revision":"0","bag":"default"}
 ,
@@ -563,6 +609,10 @@ Error message and password prompt
 {"title":"Chapter3","caption":"Chapter III THE TOWN MEETING","chapter":"3","created":"20241109132326191","modified":"20241109170255114","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 3>>\n","revision":"0","bag":"default"}
 ,
 {"title":"Chapter4","caption":"Chapter- IV. BOARD OF SELECTMEN","chapter":"4","created":"20241109215902911","modified":"20241109215947960","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 4>>\n","revision":"0","bag":"default"}
+,
+{"title":"Chapter5","caption":"Chapter V. THE FIRST SELECTMAN","chapter":"5","created":"20241109223501300","modified":"20241109223604310","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 5>>\n","revision":"0","bag":"default"}
+,
+{"title":"Chapter6","caption":"Chapter VI. APPOINTED OFFICERS, BOARDS, COMMISSIONS, COMMITTEES AND AGENCIES","chapter":"6","created":"20241109224536200","modified":"20241109224614024","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 6>>\n","revision":"0","bag":"default"}
 ,
 {"title":"Charter","created":"20241109050813307","modified":"20241109195138916","tags":"TableOfContents","type":"text/vnd.tiddlywiki","text":"\u003C\u003Cchapter 1>>\n\u003C\u003Cchapter 2>>\n\u003C\u003Cchapter 3>>\n\u003C\u003Cchapter 4>>\n\u003C\u003Cchapter 5>>\n\u003C\u003Cchapter 6>>\n\u003C\u003Cchapter 7>>\n\u003C\u003Cchapter 8>>\n\u003C\u003Cchapter 9>>\n\u003C\u003Cchapter 10>>\n","revision":"0","bag":"default"}
 ,
@@ -604,7 +654,7 @@ Error message and password prompt
 ,
 {"created":"20241109054406029","text":"\u003C\u003Csubsections 203>>\n","title":"Section203","tags":"Section Chapter2","type":"text/vnd.tiddlywiki","modified":"20241109194341599","caption":"Section 203. Town Officers - General Election ","chapter":"2","section":"203","revision":"0","bag":"default"}
 ,
-{"title":"Section203A","caption":"Section 203A","chapter":"2","created":"20241008183350409","modified":"20241109210504384","section":"203","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"At the biennial municipal election to be held on the first Monday in May 1999, pursuant to [[section 1012|Section 1012]] of this Charter, there shall be elected a Board of Selectmen consisting of five (5) members which members shall serve four (4) year terms. A political party may nominate no more than three members, one of whom shall be the designated nominee for the Office of First Selectman.","revision":"0","bag":"default"}
+{"title":"Section203A","caption":"Section 203A","chapter":"2","created":"20241008183350409","modified":"20241109231727085","section":"203","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"At the biennial municipal election to be held on the first Monday in May 1999, pursuant to \u003C\u003Csection 1012>> of this Charter, there shall be elected a Board of Selectmen consisting of five (5) members which members shall serve four (4) year terms. A political party may nominate no more than three members, one of whom shall be the designated nominee for the Office of First Selectman.","revision":"0","bag":"default"}
 ,
 {"title":"Section203B","caption":"Section 203B","chapter":"2","created":"20241109054752724","modified":"20241109173620169","section":"203","subsection":"B","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"At the biennial town election to be held on the first Monday in May 1999, and every four (4) years thereafter, there shall be elected a Town Clerk, whose term of office shall commence on the first day of July following the Town election.","revision":"0","bag":"default"}
 ,
@@ -670,7 +720,7 @@ Error message and password prompt
 ,
 {"title":"Section304E","caption":"Section 304E","chapter":"3","created":"20241109140101844","modified":"20241109175419843","section":"304","subsection":"E","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Leases and/or lease options to which the Town, including the local Board of Education, is a party which involve a term or obligation in excess of one (I) year, excluding leases of personalty.","revision":"0","bag":"default"}
 ,
-{"title":"Section304F","caption":"Section 304F","chapter":"3","created":"20241109141121495","modified":"20241109210542841","section":"304","subsection":"F","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Any appropriation from the capital and nonrecurring expense fund, not included in the annual budget, which exceeds one quarter of one percent (0.25%) of the budget as specified in [[section 805B|Section805B]];","revision":"0","bag":"default"}
+{"title":"Section304F","caption":"Section 304F","chapter":"3","created":"20241109141121495","modified":"20241109231828003","section":"304","subsection":"F","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Any appropriation from the capital and nonrecurring expense fund, not included in the annual budget, which exceeds one quarter of one percent (0.25%) of the budget as specified in \u003C\u003Csection 805B>>;","revision":"0","bag":"default"}
 ,
 {"title":"Section304G","caption":"Section 304G","chapter":"3","created":"20241109142214078","modified":"20241109175437307","section":"304","subsection":"G","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"The application for or participation in any federal, state or private grant program in excess of $2,500, excluding the local and regional Board of Education, which participation shall require the Town to contribute any cash or provide any in-kind participation to enter into any such grant programs;","revision":"0","bag":"default"}
 ,
@@ -733,6 +783,48 @@ Error message and password prompt
 {"title":"Section410C","caption":"Section 410C","chapter":"4","created":"20241109222931328","modified":"20241109222952134","section":"410","subsection":"C","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"The final decision with respect to such removal shall be made not later than\nfifteen (15) days following the close of said hearing. The decision of the Board of\nSelectmen in removing a member shall be final.","revision":"0","bag":"default"}
 ,
 {"title":"Section411","caption":"Section 411. Removal for Failure to Serve","chapter":"4","created":"20241109223028471","modified":"20241109223121059","section":"411","tags":"Section Chapter4","type":"text/vnd.tiddlywiki","text":"Any appointed member of a Town Board or Town Agency who, without good cause and timely notification to the Chairman or the Vice Chairman of the Board or agency of the reasons for non-attendance, either fails to attend at least two-thirds of the regular meetings of such board or agency during any twelve consecutive months or fails to attend six consecutive regular meetings of the board or agency shall be deemed to have resigned his or her office. It shall be the duty of the Chairman of the board or agency (or, in his or her absence or disability or where the Chairman’s attendance is the concern, the Vice Chairman), to promptly inform the Board of Selectmen of the vacancy; provided however, that the failure to inform the Board of Selectmen of the vacancy as required by this Section 411 shall not affect such Town Board or Town Agency member’s deemed . resignation. Any such vacancy shall be filled pursuant to Section 208 or 603, as appropriate of this Charter.","revision":"0","bag":"default"}
+,
+{"title":"Section501","caption":"Section 501. General","chapter":"5","created":"20241109223609249","modified":"20241109223705416","section":"501","tags":"Section Chapter5","type":"text/vnd.tiddlywiki","text":"The First Selectman shall be the Chief Elected Officer of the Town. The First Selectman shall be a voting and participating member of the Board of Selectmen and shall preside at all meetings of said Board. The First Selectman or his/her designee (who must be a Selectman) shall be an ex officio member of all other town commissions, boards and agencies.","revision":"0","bag":"default"}
+,
+{"title":"Section502","caption":"Section 502. Duties.","chapter":"5","created":"20241109223745992","modified":"20241109223851004","section":"502","tags":"Section Chapter5","type":"text/vnd.tiddlywiki","text":"Except as otherwise provided by this Charter, the First Selectman shall have ail . the powers, duties and responsibilities conferred by law. In addition, he/she shall have all of the powers necessary or incidental to the discharge of his/her duties as set forth in this Charter.","revision":"0","bag":"default"}
+,
+{"title":"Section601","caption":"Section 601. General.","chapter":"6","created":"20241109224631240","modified":"20241109224740792","section":"601","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"The members of boards, commissions, committees, authorities, and agencies: specified in this chapter, hereinafter referred to as “Town Boards”, shall be appointed by the Board of Selectmen by a majority vote of the entire Board, except as otherwise specifically provided in Section 606). Said Town Boards shall have such powers and duties as prescribed for such by the General Statutes, except as otherwise specifically provided by this Charter.","revision":"0","bag":"default"}
+,
+{"title":"Section602","caption":"Section 602. Eligibility.","chapter":"6","created":"20241109224754510","modified":"20241109224832944","section":"602","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"Unless otherwise provided for in this Charter or by the Connecticut General Statutes, A. All members of Town Boards shall be electors of the Town and shall have such other qualifications as the Board of Selectmen may provide. B. Members of Town Boards shall serve without compensation, except that just and ordinary expenses incurred by said members in the performance of their duties cemay be reimbursed, provided that such appropriation has been authorized for that purpose.","revision":"0","bag":"default"}
+,
+{"title":"Section603","caption":"Section 603. Vacancies.","chapter":"6","created":"20241109224904634","modified":"20241109225134063","section":"603","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csubsections 603>>","revision":"0","bag":"default"}
+,
+{"title":"Section603A","caption":"Section 603A","chapter":"6","created":"20241109224959514","modified":"20241109225104996","section":"603","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Any vacancy, from whatever cause arising on any Town Board shall be filled in accordance with this Section within 60 days following the date of notice to the Town Clerk and acceptance of any resignation of determination: by the Board of Selectmen of such a vacancy. Any such appointment shall be made by vote of the affected board, agency etc. and shall be for the unexpired portion of the term. B. In filling vacancies, the chair of the affected boards etc. shall notify the major political parties and the general public of such vacancies. All recommendations for ~ appointment shall be made within 35 days after notification of the vacancy to the Board of Selectmen. The affected agency shall appoint a person to fill any vacancy. In the event the affected board fails to act within 60 days, the Board of Selectmen may then fill the vacancy.","revision":"0","bag":"default"}
+,
+{"title":"Section604","caption":"Section 604. Minority Representation.","chapter":"6","created":"20241109225148286","modified":"20241109225340083","section":"604","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"Minority representation for all Appointed Officers, Boards, Commissions, Committees and Agencies shall be determined in accordance with the provisions of Section [[9-167a|https://www.cga.ct.gov/current/pub/chap_146.htm#sec_9-167a]] of the Connecticut General Statutes.","revision":"0","bag":"default"}
+,
+{"title":"Section605","caption":"Section 605. Terms of Office.","chapter":"6","created":"20241109225356848","modified":"20241109225426393","section":"605","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"Except as otherwise specifically provided for in this Charter, the terms of all Town Board members shall be for two years, and shall commence on the first Monday in July of 1999 and biennially thereafter. All Town Board members shall be eligible for reappointment and shall continue in office until a successor has been appointed and has qualified.","revision":"0","bag":"default"}
+,
+{"title":"Section606","caption":"Section 606. Appointed Town Boards.","chapter":"6","created":"20241109225447829","modified":"20241109230842447","section":"606","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"There shall be the following appointed Town Boards:\n\n\u003C\u003Csubsections 606>>\n\nThe terms of the designees shall be determined by their respective Boards, providing they do not exceed the length of term specified in Section 605 (as amended) of this Charter. The remaining 3 members shall be designated as members at large who shall not be members of the above boards and shall be appointed as prescribed in Section 601 and 605 as modified.","revision":"0","bag":"default"}
+,
+{"title":"Section606A","caption":"Section 606A","chapter":"6","created":"20241109225550634","modified":"20241109225625529","section":"606","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Conservation Commission consisting of five (5) members, who shall serve two (2) year terms.","revision":"0","bag":"default"}
+,
+{"title":"Section606B","caption":"Section 606B","chapter":"6","created":"20241109225721561","modified":"20241109225801475","section":"606","subsection":"B","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Recreation Commission consisting of five (5) members; who shall serve two (2) year terms. ","revision":"0","bag":"default"}
+,
+{"title":"Section606C","caption":"Section 606C","chapter":"6","created":"20241109225816717","modified":"20241109225854026","section":"606","subsection":"C","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"An Economic Development Commission consisting of five (5) members, who shall serve two (2) year terms. ","revision":"0","bag":"default"}
+,
+{"title":"Section606D","caption":"Section 606D","chapter":"6","created":"20241109225921747","modified":"20241109225946810","section":"606","subsection":"D","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Memorial Day Committee consisting of five (5) members, who shall serve two (2) year terms.","revision":"0","bag":"default"}
+,
+{"title":"Section606E","caption":"Section 606E","chapter":"6","created":"20241109225954212","modified":"20241109230034377","section":"606","subsection":"E","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Norton Fund Commission consisting of five (5) members who shall serve two (2} year terms.","revision":"0","bag":"default"}
+,
+{"title":"Section606F","caption":"Section 606F","chapter":"6","created":"20241109230049680","modified":"20241109230113348","section":"606","subsection":"F","tags":"Subsection","type":"text/vnd.tiddlywiki","text":" Library Board of Directors consisting of five (5) members who shall serve two (2} year terms.","revision":"0","bag":"default"}
+,
+{"title":"Section606G","caption":"Section 606G","chapter":"6","created":"20241109230127523","modified":"20241109230211539","section":"606","subsection":"G","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"An Inland Wetlands Commission consisting of five (5) members who shall serve two (2) year terms.","revision":"0","bag":"default"}
+,
+{"title":"Section606H","caption":"Section 606H","chapter":"6","created":"20241109230242936","modified":"20241109230302281","section":"606","subsection":"H","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"An Ordinance Review Committee consisting of five (5) members who shall serve two (2) year terms.","revision":"0","bag":"default"}
+,
+{"title":"Section606I","caption":"Section 606I","chapter":"6","created":"20241109230329541","modified":"20241109230420166","section":"606","subsection":"I","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Such other Town Boards as may from time to time be established by ordinance, whose function, composition and terms of members shall be prescribed in the establishing ordinance.","revision":"0","bag":"default"}
+,
+{"title":"Section606J","caption":"Section 606J","chapter":"6","created":"20241109230425023","modified":"20241109230828856","section":"606","subsection":"J","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Capital Improvement Plan Committee consisting of seven (7) members. The\nCommittee shall be composed of designees chosen by a majority vote of their\nrespective Boards as follows: 1 member of the Board of Education 1 member of\nthe Board of Fire Commissioners 1 member of the Board of Finance 1 member of\nthe Board of Selectmen.","revision":"0","bag":"default"}
+,
+{"title":"Section607","caption":"Section 607. Alternates.","chapter":"6","created":"20241109230935474","modified":"20241109231002204","section":"607","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"The Town Meeting may, by ordinance, provide for the appointment of alternates to the appointed boards delineated in Section 606 when deemed necessary.","revision":"0","bag":"default"}
+,
+{"title":"Section608","caption":"Section 608. Rules of Procedure.","chapter":"6","created":"20241109231048973","modified":"20241109231131594","section":"608","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"Each appointed Town Board, shall by resolution, determine its own rules of procedure, provided that all regular and special meetings shall be held in accordance with the applicable provisions of the General Statutes. Such rules of procedures shall be filed with the Office of the Town Clerk and with the Board of Selectmen within thirty (30) days of their adoption. Amendments to rules of procedures may be made at any meeting, providing that such amendments are properly on the call of the meeting and filed with the Town Clerk within seven (7) days of their adoption. In the absence of rules, or the failure of a Town Board to file aforementioned procedures or amendments with the Office of the Town Clerk, the Board shall be deemed to have adopted (the) “Robert’ s Rules of Order”, as published and amended.","revision":"0","bag":"default"}
 ,
 {"title":"TableOfContents","caption":"Contents","created":"20180926191321993","list":"Admin Welcome [[2023 Slate]] [[Democratic Town Committee]] [[Candidate Bios]] [[Print Brochure]] [[Elected Positions]] Voting Meeting Campaign Person [[Lawn Sign]] Data Legal Miscellaneous [[Search Voters]]","modified":"20241109170431969","tags":"$:/tags/SideBar","type":"text/vnd.tiddlywiki","text":"\u003Cdiv class=\"tc-table-of-contents\">\n\n\u003C\u003Ctoc-selective-expandable \"TableOfContents\" exclude:\"[has[excludeTOC]]\" >>\n\n\u003C/div>\n","revision":"0","bag":"default"}
 ,
