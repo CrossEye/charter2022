@@ -1,0 +1,15 @@
+code-body: yes
+created: 20241109034043907
+modified: 20241109062137534
+tags: $:/tags/Global
+title: $:/_/atc/procedures/subsection
+type: text/vnd.tiddlywiki
+
+\procedure subsection(section)
+<$let currentTiddler={{{ [<section>addprefix[Section]] }}}>
+<div class="subsection">
+  <div class="ss-name"><$link>{{!!subsection}}. </$link></div>
+  <div class="ss-body"><$transclude mode="block"/></div>
+</div>
+</$let>
+\end

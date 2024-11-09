@@ -1,0 +1,13 @@
+code-body: yes
+created: 20241108041638516
+modified: 20241109034009462
+tags: $:/tags/Global
+title: $:/_/atc/procedures/section
+type: text/vnd.tiddlywiki
+
+\procedure section(nbr)
+<$let currentTiddler={{{ [<nbr>addprefix[Section]] }}}>
+<h3><$link class="tc-tiddlylink tc-tiddlylink-resolves">{{!!caption}}</$link></h3>
+<$transclude mode="block" />
+</$let>
+\end

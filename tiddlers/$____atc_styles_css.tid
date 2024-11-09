@@ -1,0 +1,9 @@
+created: 20241109035128759
+modified: 20241109134507650
+tags: $:/tags/Stylesheet
+title: $:/_/atc/styles/css
+type: text/vnd.tiddlywiki
+
+.subsection {margin-left: 1.5em;}
+.ss-name {float: left; padding-right: .5em;}
+.tc-subtitle {display: none;}
