@@ -1,17 +1,14 @@
 code-body: yes
 created: 20210313151647704
 description: Every link click opens or moves tiddler to the top
-modified: 20241109152039169
+modified: 20241109204338029
 name: Move to Top
 tags: $:/tags/Layout
 title: $:/_/atc/layout/MoveToTop
 type: text/vnd.tiddlywiki
 
 \whitespace trim
-\define containerClasses()
-tc-page-container tc-page-view-$(storyviewTitle)$ tc-language-$(languageTitle)$
-\end
-\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/Global]!has[draft.of]]
+\import [subfilter{$:/core/config/GlobalImportFilter}]
 
 <$vars
 	tv-config-toolbar-icons={{$:/config/Toolbar/Icons}}
@@ -22,14 +19,16 @@ tc-page-container tc-page-view-$(storyviewTitle)$ tc-language-$(languageTitle)$
 	storyviewTitle={{$:/view}}
 	languageTitle={{{ [{$:/language}get[name]] }}}>
 
-<div class=<<containerClasses>>>
+<div class={{{ [all[shadows+tiddlers]tag[$:/tags/ClassFilters/PageTemplate]!is[draft]] :map:flat[subfilter{!!text}] tc-page-container [[tc-page-view-]addsuffix<storyviewTitle>] [[tc-language-]addsuffix<languageTitle>] :and[unique[]join[ ]] }}} >
 
 <$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
 
-<$dropzone enable=<<tv-enable-drag-and-drop>>>
+<$dropzone enable=<<tv-enable-drag-and-drop>> class="tc-dropzone tc-page-container-inner">
+
 <$linkcatcher message="tm-navigate" actions="""
 <$action-listops $tiddler="$:/StoryList" $subfilter="[<navigateTo>] +[putfirst[]limit[15]]"/>
 """>
+
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]" variable="listItem">
 
 <$transclude tiddler=<<listItem>>/>
