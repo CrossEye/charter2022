@@ -1,16 +1,13 @@
 code-body: yes
 created: 20241109040904621
-modified: 20241109182756548
+modified: 20241109231556399
 tags: $:/tags/Global
 title: $:/_/atc/procedures/subsections
 type: text/vnd.tiddlywiki
 
 \procedure subsections(parent)
 <$list filter="[tag[Subsection]section<parent>!has[draft.of]]" >
-  <$let 
-    section={{{ [{!!section}] [{!!subsection}] +[join[]] }}} 
-    currentTiddler={{{ [<section>addprefix[Section]] }}}
-  > 
+  <$let currentTiddler={{{ [[Section]] [{!!section}] [{!!subsection}] +[join[]] }}}>
     <div class="subsection">
       <div class="ss-name"><$link>{{!!subsection}}. </$link></div>
       <div class="ss-body"><$transclude mode="block"/></div>
