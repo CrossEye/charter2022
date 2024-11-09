@@ -1,13 +1,18 @@
-code-body: yes
-created: 20241108041638516
-modified: 20241109034009462
+created: 20241109191515974
+modified: 20241109201914518
 tags: $:/tags/Global
-title: $:/_/atc/procedures/section
+title: $:/_/atc/procedures/Section
 type: text/vnd.tiddlywiki
 
-\procedure section(nbr)
-<$let currentTiddler={{{ [<nbr>addprefix[Section]] }}}>
-<h3><$link class="tc-tiddlylink tc-tiddlylink-resolves">{{!!caption}}</$link></h3>
-<$transclude mode="block" />
-</$let>
-\end
+\procedure Section(sect) <$link to={{{ [[Section]] [<sect>] +[join[]] }}} >Section <<sect>></$link>
+
+\procedure section(sect) <$link to={{{ [[Section]] [<sect>] +[join[]] }}} >section <<sect>></$link>
+
+\procedure sec(sect) <$link to={{{ [[Section]] [<sect>] +[join[]] }}} ><<sect>></$link>
+
+
+A few simple procs for links to various sections, subsections, and sub-subsections:
+
+* `<<Section 305B>>`: <<Section 305B>>
+* `<<section 104>>`: <<section 104>>
+* `<<sec 203C(5)>>`: <<sec 203C(5) >>
