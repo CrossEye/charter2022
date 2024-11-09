@@ -1,12 +1,12 @@
 code-body: yes
 created: 20241109060008488
-modified: 20241109061855809
+modified: 20241109174059688
 tags: $:/tags/Global
 title: $:/_/atc/procedures/sub-subsections
 type: text/vnd.tiddlywiki
 
 \procedure sub-subsections(section, subsection)
 <$list filter="[tag[Sub-subsection]section<section>subsection<subsection>!has[draft.of]]" >
-  <$transclude $variable="sub-subsection" $mode="block" section={{{ [{!!section}] [{!!subsection}]  [{!!sub-subsection}] +[join[-]] }}} />
+  <$transclude $variable="sub-subsection" $mode="block" section={{{ [{!!section}] [{!!subsection}] [[(]] [{!!sub-subsection}] [[)]] +[join[]] }}} />
 </$list>
 \end
