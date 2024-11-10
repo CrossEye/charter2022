@@ -263,6 +263,8 @@ Error message and password prompt
 
 <li>Chapter6</li>
 
+<li>Chapter7</li>
+
 <li>Charter</li>
 
 <li>Section101</li>
@@ -475,6 +477,86 @@ Error message and password prompt
 
 <li>Section608</li>
 
+<li>Section701</li>
+
+<li>Section701A</li>
+
+<li>Section701B</li>
+
+<li>Section701C</li>
+
+<li>Section701D</li>
+
+<li>Section701D(1)</li>
+
+<li>Section701D(10)</li>
+
+<li>Section701D(11)</li>
+
+<li>Section701D(12)</li>
+
+<li>Section701D(13)</li>
+
+<li>Section701D(14)</li>
+
+<li>Section701D(15)</li>
+
+<li>Section701D(2)</li>
+
+<li>Section701D(3)</li>
+
+<li>Section701D(4)</li>
+
+<li>Section701D(5)</li>
+
+<li>Section701D(6)</li>
+
+<li>Section701D(7)</li>
+
+<li>Section701D(8)</li>
+
+<li>Section701D(9)</li>
+
+<li>Section701E</li>
+
+<li>Section701E(1)</li>
+
+<li>Section701E(2)</li>
+
+<li>Section702</li>
+
+<li>Section702A</li>
+
+<li>Section702B</li>
+
+<li>Section702C</li>
+
+<li>Section702D</li>
+
+<li>Section702E</li>
+
+<li>Section702F</li>
+
+<li>Section702G</li>
+
+<li>Section702H</li>
+
+<li>Section702I</li>
+
+<li>Section702J</li>
+
+<li>Section702K</li>
+
+<li>Section702L</li>
+
+<li>Section702M</li>
+
+<li>Section702N</li>
+
+<li>Section702O</li>
+
+<li>Section703</li>
+
 <li>TableOfContents</li>
 
 <li>TiddlyWiki</li>
@@ -506,11 +588,11 @@ Error message and password prompt
 ,
 {"title":"$:/_/atc/procedures/Section","created":"20241109191515974","modified":"20241109215821565","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure Section(sect) \u003C$link to={{{ [[Section]] [\u003Csect>] +[join[]] }}} >Section \u003C\u003Csect>>\u003C/$link>\n\n\\procedure section(sect) \u003C$link to={{{ [[Section]] [\u003Csect>] +[join[]] }}} >section \u003C\u003Csect>>\u003C/$link>\n\n\\procedure sec(sect) \u003C$link to={{{ [[Section]] [\u003Csect>] +[join[]] }}} >\u003C\u003Csect>>\u003C/$link>\n\n\nA few simple procs for links to various sections, subsections, and sub-subsections:\n\n* `\u003C\u003CSection 305B>>`: \u003C\u003CSection 305B>>\n* `\u003C\u003Csection 104>>`: \u003C\u003Csection 104>>\n* `\u003C\u003Csec 203C(5)>>`: \u003C\u003Csec 203C(5) >>","revision":"0","bag":"default"}
 ,
-{"title":"$:/_/atc/procedures/sections","code-body":"yes","created":"20241109045339675","modified":"20241109181954898","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure sections(chapter)\n\u003C$list filter=\"[tag[Section]chapter\u003Cchapter>!has[draft.of]]\" >\n  \u003C$let currentTiddler={{{ [{!!section}addprefix[Section]] }}}>\n    \u003Ch3>\u003C$link class=\"tc-tiddlylink tc-tiddlylink-resolves\">{{!!caption}}\u003C/$link>\u003C/h3>\n    \u003C$transclude mode=\"block\" />\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
+{"title":"$:/_/atc/procedures/sections","code-body":"yes","created":"20241109045339675","modified":"20241110005819360","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure sections(chapter)\n\u003C$list filter=\"[tag[Section]chapter\u003Cchapter>!has[draft.of]sortan[]]\" >\n  \u003C$let currentTiddler={{{ [{!!section}addprefix[Section]] }}}>\n    \u003Ch3>\u003C$link class=\"tc-tiddlylink tc-tiddlylink-resolves\">{{!!caption}}\u003C/$link>\u003C/h3>\n    \u003C$transclude mode=\"block\" />\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
 ,
-{"title":"$:/_/atc/procedures/sub-subsections","code-body":"yes","created":"20241109060008488","modified":"20241109191128711","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure sub-subsections(section, subsection)\n\u003C$list filter=\"[tag[Sub-subsection]section\u003Csection>subsection\u003Csubsection>!has[draft.of]]\" >\n  \u003C$let \n    parent ={{{ [{!!section}] [{!!subsection}] [[(]] [{!!sub-subsection}] [[)]] +[join[]] }}}\n    currentTiddler={{{ [\u003Cparent>addprefix[Section]] }}}\n  >\n    \u003Cdiv class=\"subsection\">\n      \u003Cdiv class=\"ss-name\">\u003C$link>{{!!sub-subsection}}. \u003C/$link>\u003C/div>\n      \u003Cdiv class=\"ss-body\">\u003C$transclude mode=\"block\"/>\u003C/div>\n    \u003C/div>\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
+{"title":"$:/_/atc/procedures/sub-subsections","code-body":"yes","created":"20241109060008488","modified":"20241110005700011","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure sub-subsections(section, subsection)\n\u003C$list filter=\"[tag[Sub-subsection]section\u003Csection>subsection\u003Csubsection>!has[draft.of]sortan[]]\" >\n  \u003C$let \n    parent ={{{ [{!!section}] [{!!subsection}] [[(]] [{!!sub-subsection}] [[)]] +[join[]] }}}\n    currentTiddler={{{ [\u003Cparent>addprefix[Section]] }}}\n  >\n    \u003Cdiv class=\"subsection\">\n      \u003Cdiv class=\"ss-name\">\u003C$link>{{!!sub-subsection}}. \u003C/$link>\u003C/div>\n      \u003Cdiv class=\"ss-body\">\u003C$transclude mode=\"block\"/>\u003C/div>\n    \u003C/div>\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
 ,
-{"title":"$:/_/atc/procedures/subsections","code-body":"yes","created":"20241109040904621","modified":"20241109231556399","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure subsections(parent)\n\u003C$list filter=\"[tag[Subsection]section\u003Cparent>!has[draft.of]]\" >\n  \u003C$let currentTiddler={{{ [[Section]] [{!!section}] [{!!subsection}] +[join[]] }}}>\n    \u003Cdiv class=\"subsection\">\n      \u003Cdiv class=\"ss-name\">\u003C$link>{{!!subsection}}. \u003C/$link>\u003C/div>\n      \u003Cdiv class=\"ss-body\">\u003C$transclude mode=\"block\"/>\u003C/div>\n    \u003C/div>\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
+{"title":"$:/_/atc/procedures/subsections","code-body":"yes","created":"20241109040904621","modified":"20241110005725749","tags":"$:/tags/Global","type":"text/vnd.tiddlywiki","text":"\\procedure subsections(parent)\n\u003C$list filter=\"[tag[Subsection]section\u003Cparent>!has[draft.of]sortan[]]\" >\n  \u003C$let currentTiddler={{{ [[Section]] [{!!section}] [{!!subsection}] +[join[]] }}}>\n    \u003Cdiv class=\"subsection\">\n      \u003Cdiv class=\"ss-name\">\u003C$link>{{!!subsection}}. \u003C/$link>\u003C/div>\n      \u003Cdiv class=\"ss-body\">\u003C$transclude mode=\"block\"/>\u003C/div>\n    \u003C/div>\n  \u003C/$let>\n\u003C/$list>\n\\end","revision":"0","bag":"default"}
 ,
 {"title":"$:/_/atc/reader-mode/setReadOnlyOnReload","code-body":"yes","created":"20241109162018975","modified":"20241109232828813","tags":"$:/tags/StartupAction","type":"text/vnd.tiddlywiki","text":"\u003C!-- Put ReaderMode on, if not running inside Node.  Can cancel with CTRL-Shift-/ -->\n\n\u003C$list filter=\"[[$:/plugins/tiddlywiki/tiddlyweb]is[missing]]\">\n\n\u003C$action-setfield $tiddler=\"$:/status/IsReaderMode\" $field=text $value=\"yes\"/>\n\u003C$action-setfield $tiddler=\"$:/config/DragAndDrop/Enable\" $field=text $value=\"no\"/>\n\u003C$action-listops $tiddler=\"$:/core/ui/SideBar/Tools\" $field=tags $subfilter=\" +[remove[$:/tags/SideBar]]\"/>\n\u003C$action-listops $tiddler=\"$:/core/ui/SideBar/More\" $field=tags $subfilter=\" +[remove[$:/tags/SideBar]]\"/>\n\u003C$action-listops $tiddler=\"$:/config/DragAndDrop/Enable\" $field=text $value=\"no\"/>\n\n\u003C/$list>","revision":"0","bag":"default"}
 ,
@@ -600,7 +682,7 @@ Error message and password prompt
 ,
 {"title":"$:/themes/tiddlywiki/vanilla/options/stickytitles","created":"20240221172401751","modified":"20240221172401751","type":"text/vnd.tiddlywiki","text":"yes","revision":"0","bag":"default"}
 ,
-{"title":"About","caption":"About","created":"20230326150914405","modified":"20241109172731981","tags":"","type":"text/vnd.tiddlywiki","version":"0.4npm.0+","text":"This is an online version of Andover's [[Town Charter|https://www.andoverconnecticut.org/sites/g/files/vyhlif5346/f/uploads/andover_town_charter_2022_0.pdf]].  It is designed to make it easier to search and to share links to its many chapters, sections, subsections, and even sub-subsections.\n\n!! Credits\n\nThe charter was built over many years by the citizens of Andover through various [[Charter Revision Commissions|https://www.andoverconnecticut.org/charter-revision-commission]], with help from their attorney.  The [[Town Clerk|https://www.andoverconnecticut.org/town-clerk]] maintains the document.\n\nThis online version was created by [[Scott Sauyet|mailto:scott@sauyet.com]].\n\n!! Technology\n\n{{TiddlyWiki}}\n\n!! Version\n\n{{!!version}}\n\n","revision":"0","bag":"default"}
+{"title":"About","caption":"About","created":"20230326150914405","modified":"20241109172731981","tags":"","type":"text/vnd.tiddlywiki","version":"0.4.0+","text":"This is an online version of Andover's [[Town Charter|https://www.andoverconnecticut.org/sites/g/files/vyhlif5346/f/uploads/andover_town_charter_2022_0.pdf]].  It is designed to make it easier to search and to share links to its many chapters, sections, subsections, and even sub-subsections.\n\n!! Credits\n\nThe charter was built over many years by the citizens of Andover through various [[Charter Revision Commissions|https://www.andoverconnecticut.org/charter-revision-commission]], with help from their attorney.  The [[Town Clerk|https://www.andoverconnecticut.org/town-clerk]] maintains the document.\n\nThis online version was created by [[Scott Sauyet|mailto:scott@sauyet.com]].\n\n!! Technology\n\n{{TiddlyWiki}}\n\n!! Version\n\n{{!!version}}\n\n","revision":"0","bag":"default"}
 ,
 {"title":"Chapter1","caption":"Chapter I. INCORPORATION AND GENERAL POWERS","chapter":"1","created":"20241109045043935","modified":"20241109180937665","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 1>>\n","revision":"0","bag":"default"}
 ,
@@ -614,6 +696,8 @@ Error message and password prompt
 ,
 {"title":"Chapter6","caption":"Chapter VI. APPOINTED OFFICERS, BOARDS, COMMISSIONS, COMMITTEES AND AGENCIES","chapter":"6","created":"20241109224536200","modified":"20241109224614024","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 6>>\n","revision":"0","bag":"default"}
 ,
+{"title":"Chapter7","caption":"Chapter VII. ADMINISTRATIVE OFFICERS","chapter":"7","created":"20241110001210853","modified":"20241110001503635","tags":"Chapter Charter","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csections 7>>\n","revision":"0","bag":"default"}
+,
 {"title":"Charter","created":"20241109050813307","modified":"20241109195138916","tags":"TableOfContents","type":"text/vnd.tiddlywiki","text":"\u003C\u003Cchapter 1>>\n\u003C\u003Cchapter 2>>\n\u003C\u003Cchapter 3>>\n\u003C\u003Cchapter 4>>\n\u003C\u003Cchapter 5>>\n\u003C\u003Cchapter 6>>\n\u003C\u003Cchapter 7>>\n\u003C\u003Cchapter 8>>\n\u003C\u003Cchapter 9>>\n\u003C\u003Cchapter 10>>\n","revision":"0","bag":"default"}
 ,
 {"title":"Section101","caption":"Section 101. Incorporation","chapter":"1","created":"20241108041414354","modified":"20241109172937090","section":"101","tags":"Chapter1 Section","type":"text/vnd.tiddlywiki","text":"All of the inhabitants dwelling within the territorial limits of the Town of Andover, as heretofore constituted, shall continue to be a body politic and corporate under the name of \"The Town of Andover\", hereinafter called \"The Town\", and as such shall have perpetual succession and may hold and exercise all powers and privileges heretofore exercised by said Town and not inconsistent with the provisions of this Charter, the additional powers and privileges herein conferred and all powers and privileges conferred upon Towns under the general laws of the State of Connecticut.\n","revision":"0","bag":"default"}
@@ -626,7 +710,7 @@ Error message and password prompt
 ,
 {"title":"Section105","caption":"Section 105. Definitions","chapter":"1","created":"20241109040158916","modified":"20241109045535170","section":"105","tags":"Chapter1 Section","type":"text/vnd.tiddlywiki","text":"Whenever used in the context of this Charter, the following words and phrases shall have the following meanings:\n\n\u003C\u003Csubsections 105>>\n","revision":"0","bag":"default"}
 ,
-{"title":"Section105A","caption":"Section 105A","chapter":"1","created":"20241109034540546","modified":"20241109174455511","section":"105","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"“Town Board” shall mean all of the appointed boards, agencies, commissions, authorities and committees of the town;\n","revision":"0","bag":"default"}
+{"title":"Section105A","caption":"Section 105A","chapter":"1","created":"20241109034540546","modified":"20241109233741059","section":"105","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"“Town Board” shall mean all of the appointed boards, agencies, commissions, authorities and committees of the town;\n","revision":"0","bag":"default"}
 ,
 {"title":"Section105B","caption":"Section 105B","chapter":"1","created":"20241109035306075","modified":"20241109174724566","section":"105","subsection":"B","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"\"Town Agency\" shall mean all of the elected and appointed Town boards, agencies, commissions and committees of the Town, including the local Board of Education;\n","revision":"0","bag":"default"}
 ,
@@ -658,11 +742,11 @@ Error message and password prompt
 ,
 {"title":"Section203B","caption":"Section 203B","chapter":"2","created":"20241109054752724","modified":"20241109173620169","section":"203","subsection":"B","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"At the biennial town election to be held on the first Monday in May 1999, and every four (4) years thereafter, there shall be elected a Town Clerk, whose term of office shall commence on the first day of July following the Town election.","revision":"0","bag":"default"}
 ,
-{"title":"Section203C","caption":"Section 203C","chapter":"2","created":"20241109054934769","modified":"20241109194645454","section":"203","subsection":"C","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"At the biennial town election to be held on the first Monday in May and every two (2) years thereafter, there shall be elected members to the following boards, commissions and agencies for the terms specified herein. Except as otherwise provided in this Charter, such boards, commissions and agencies shall have powers and duties as are provided in the Connecticut General Statutes. Electors may vote for, and a political party may nominate, as many candidates as there are available seats to be filled on the following boards and commissions, specifically including the Board of Assessment Appeals and the Board of Education, provided however, that the minority representation requirements of Conn. Gen. Stat. § [[9- 204b|https://www.cga.ct.gov/current/pub/chap_146.htm#sec_9-204b]] shall apply:\n\n\u003C\u003Csub-subsections 203 C>>","revision":"0","bag":"default"}
+{"title":"Section203C","caption":"Section 203C","chapter":"2","created":"20241109054934769","modified":"20241110003238093","section":"203","subsection":"C","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"At the biennial town election to be held on the first Monday in May and every two (2) years thereafter, there shall be elected members to the following boards, commissions and agencies for the terms specified herein. Except as otherwise provided in this Charter, such boards, commissions and agencies shall have powers and duties as are provided in the Connecticut General Statutes. Electors may vote for, and a political party may nominate, as many candidates as there are available seats to be filled on the following boards and commissions, specifically including the Board of Assessment Appeals and the Board of Education, provided however, that the minority representation requirements of Conn. Gen. Stat. § [[9- 204b|https://www.cga.ct.gov/current/pub/chap_146.htm#sec_9-204b]] shall apply:\n\n\u003C\u003Csub-subsections 203 C>>","revision":"0","bag":"default"}
 ,
 {"title":"Section203C(1)","caption":"Section 203C(1)","chapter":"2","created":"20241109055229245","modified":"20241109194831325","section":"203","sub-subsection":"1","subsection":"C","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"A Board of Finance, consisting of seven voting members, which shall serve four (4) overlapping terms; plus an additional non-voting member (ex-officio) to be designated by the Capital Improvement Plan Committee.","revision":"0","bag":"default"}
 ,
-{"title":"Section203C(2)","caption":"Section 203C(2)","chapter":"2","created":"20241109062302779","modified":"20241109174132388","section":"203","sub-subsection":"2","subsection":"C","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"A Board of Assessment Appeals, consisting of three (3) members which shall serve four (4) year terms;","revision":"0","bag":"default"}
+{"title":"Section203C(2)","caption":"Section 203C(2)","chapter":"2","created":"20241109062302779","modified":"20241109234003236","section":"203","sub-subsection":"2","subsection":"C","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"A Board of Assessment Appeals, consisting of three (3) members which shall serve four (4) year terms;","revision":"0","bag":"default"}
 ,
 {"title":"Section203C(3)","caption":"Section 203C(3)","chapter":"2","created":"20241109062520622","modified":"20241109174157061","section":"203","sub-subsection":"3","subsection":"C","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"A Planning and Zoning Commission consisting of five (5) members and three (3) alternates, which members shall serve four (4) year overlapping terms;","revision":"0","bag":"default"}
 ,
@@ -825,6 +909,86 @@ Error message and password prompt
 {"title":"Section607","caption":"Section 607. Alternates.","chapter":"6","created":"20241109230935474","modified":"20241109231002204","section":"607","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"The Town Meeting may, by ordinance, provide for the appointment of alternates to the appointed boards delineated in Section 606 when deemed necessary.","revision":"0","bag":"default"}
 ,
 {"title":"Section608","caption":"Section 608. Rules of Procedure.","chapter":"6","created":"20241109231048973","modified":"20241109231131594","section":"608","tags":"Section Chapter6","type":"text/vnd.tiddlywiki","text":"Each appointed Town Board, shall by resolution, determine its own rules of procedure, provided that all regular and special meetings shall be held in accordance with the applicable provisions of the General Statutes. Such rules of procedures shall be filed with the Office of the Town Clerk and with the Board of Selectmen within thirty (30) days of their adoption. Amendments to rules of procedures may be made at any meeting, providing that such amendments are properly on the call of the meeting and filed with the Town Clerk within seven (7) days of their adoption. In the absence of rules, or the failure of a Town Board to file aforementioned procedures or amendments with the Office of the Town Clerk, the Board shall be deemed to have adopted (the) “Robert’ s Rules of Order”, as published and amended.","revision":"0","bag":"default"}
+,
+{"title":"Section701","caption":"Section 701. General.","chapter":"7","created":"20241110001516962","modified":"20241110001849688","section":"701","tags":"Section Chapter7","type":"text/vnd.tiddlywiki","text":"With the exception of \u003C\u003Csec 702(O)>>, Town Clerk, which is an elected position, the Board of Selectmen shall appoint, and as necessary remove the Administrative Officers provided for in \u003C\u003CSection 702>> by the methods and manners contained in each subsection. Appointments shall be made through competitive examination. In this Competitive Examination process a screening/interview committee made up of incumbents from other towns of the office to be appointed shall be assigned to determine qualified candidates. The competitive exam process may be modified as necessary by a majority vote of the Board of Selectmen after holding a public hearing and modifications shall be recorded with the office of the Town Clerk. All officers shall receive such compensation as determined by the Board of Selectmen, unless delineated otherwise .in the subsections below, subject to inclusion in the annual budget. The terms of all such officers, except as otherwise provided in the Charter, shall be set by the Board of Selectmen. Unless otherwise restricted by the Selectmen or other provisions of this Charter, officers need not be residents of the Town. However, all else being equal, priority shall be given to Andover residents when appointments are made.\n\n\u003C\u003Csubsections 701>>","revision":"0","bag":"default"}
+,
+{"title":"Section701A","caption":"Section 701A. Town Administrator","chapter":"7","created":"20241110001911257","modified":"20241110002018988","section":"701","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"The Town Administrator shall be the Chief Executive Officer of the Town of |\nAndover responsible to the Board of Selectmen for the supervision, direction and\nadministration of all Town of Andover departments, agencies and offices except\nthe Board of Education and Town agencies whose head or members are elected\nby popular vote.","revision":"0","bag":"default"}
+,
+{"title":"Section701B","caption":"Section 701B. Appointment Procedure","chapter":"7","created":"20241110002138725","modified":"20241110002222006","section":"701","subsection":"B","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"The Board of Selectmen shall appoint a Town Administrator who shall be the chief executive officer of the Town to serve at the pleasure of the Selectmen. The appointment shall be made by a majority vote of the Board of Selectmen based on the recommendation of an ad hoc search committee consisting of 2 members of the Board of Selectmen, a member of the Board of Finance and two electors of the Town who do not hold any public office whatsoever, chosen by said three public officials. No more than a bare majority of the search committee may be registered members of the same political party. The selection process will include an advisory screening/review committee made up of incumbents from other towns in similar positions to determine qualified candidates. The recommendation of the search committee to the Board of Selectmen wil! be by simple majority.","revision":"0","bag":"default"}
+,
+{"title":"Section701C","caption":"Section 701C. Qualifications; Compensation.","chapter":"7","created":"20241110002329892","modified":"20241110002433802","section":"701","subsection":"C","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"The Town Administrator shall be chosen by the Board of Selectmen exclusively on the basis of executive, technical and administrative qualifications, character, educational background, training/certification and professionally related experience. A Bachelor's Degree is required, or an equivalent combination of education, training and experience. The Town Administrator shall devote full working time to the duties of the office.","revision":"0","bag":"default"}
+,
+{"title":"Section701D","caption":"Section 701D. Duties of the Town Administrator","chapter":"7","created":"20241110002842696","modified":"20241110003248478","section":"701","subsection":"D","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"As Chief Executive Officer of the Town of Andover, under the general direction of\nthe Board of Selectmen, the Town Administrator shall:\n\n\u003C\u003Csub-subsections 701 D>>","revision":"0","bag":"default"}
+,
+{"title":"Section701D(1)","caption":"Section 701D(1)","chapter":"7","created":"20241110003040321","modified":"20241110003140110","section":"701","sub-subsection":"1","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Ensure that all laws and ordinances governing the Town are faithfully executed;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(10)","caption":"Section 701D(10)","chapter":"7","created":"20241110005012857","modified":"20241110005043895","section":"701","sub-subsection":"10","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Prepare and submit a proposed annual budget to the Board of Selectmen and the Board of Finance; -","revision":"0","bag":"default"}
+,
+{"title":"Section701D(11)","caption":"Section 701D(11)","chapter":"7","created":"20241110005048183","modified":"20241110005220107","section":"701","sub-subsection":"11","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Expend or withhold the funds necessary to ensure the smooth and fiscally sound operation of Town business and the health, safety and well being of the Town and its residents, consistent with this Charter;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(12)","caption":"Section 701D(12)","chapter":"7","created":"20241110005223691","modified":"20241110005256441","section":"701","sub-subsection":"12","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"With the exception of real estate, motor vehicles and the like, purchase or lease or causing to be purchased or leased, subject to such rules and regulations | as may be adopted by the Board of Selectmen, all supplies, materials, equipment and other commodities required by any office, board, agency or commission, including the local Board of Education to the extent said board shall authorize;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(13)","caption":"Section 701D(13)","chapter":"7","created":"20241110005409465","modified":"20241110005444984","section":"701","sub-subsection":"13","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Assist the Board of Selectmen to develop long term goals for the Town and strategies to implement such goals;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(14)","caption":"Section 701D(14)","chapter":"7","created":"20241110005454615","modified":"20241110005527449","section":"701","sub-subsection":"14","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Promote partnerships among the Board of Selectmen, Board of Finance and citizenry to develop sound public policy and build a sense of community; and","revision":"0","bag":"default"}
+,
+{"title":"Section701D(15)","caption":"Section 701D(15)","chapter":"7","created":"20241110005532682","modified":"20241110005611412","section":"701","sub-subsection":"15","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Exercise such authority and perform such other duties as may be required by ordinance or resolution of the Board of Selectmen not inconsistent with this Charter.","revision":"0","bag":"default"}
+,
+{"title":"Section701D(2)","caption":"Section 701D(2)","chapter":"7","created":"20241110003455524","modified":"20241110003547421","section":"701","sub-subsection":"2","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Make periodic reports to the Board of Selectmen;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(3)","caption":"Section 701D(3)","chapter":"7","created":"20241110003551999","modified":"20241110003631609","section":"701","sub-subsection":"3","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Attend Board of Selectmen meetings with full authority to participate in them, but, without the authority to vote;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(4)","caption":"Section 701D(4)","chapter":"7","created":"20241110003639147","modified":"20241110003711449","section":"701","sub-subsection":"4","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Make.a continuous review of the current and future needs of the Town and in connection therewith, require reports and information to be submitted by any agency of the Town;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(5)","caption":"Section 701D(5)","chapter":"7","created":"20241110003732577","modified":"20241110003807544","section":"701","sub-subsection":"5","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Recommend to the Board of Selectmen such measures as may be necessary or expedient;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(6)","caption":"Section 701D(6)","chapter":"7","created":"20241110003811099","modified":"20241110003914048","section":"701","sub-subsection":"6","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Keep the Board of Selectmen informed of state and federal grant programs for which the Town may be eligible and apply for and implement the same;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(7)","caption":"Section 701D(7)","chapter":"7","created":"20241110003917863","modified":"20241110004013816","section":"701","sub-subsection":"7","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Periodically review all insurance coverage carried by the Town, including the local Board of Education and recommend to the Board of Selectmen adjustments and improvements in such coverage;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(8)","caption":"Section 701D(8)","chapter":"7","created":"20241110004728586","modified":"20241110004755593","section":"701","sub-subsection":"8","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Assist the Board of Selectmen in preparing the annual town report and cause it to be printed as soon as possible after the close of the Fiscal Year;","revision":"0","bag":"default"}
+,
+{"title":"Section701D(9)","caption":"Section 701D(9)","chapter":"7","created":"20241110004908224","modified":"20241110004933126","section":"701","sub-subsection":"9","subsection":"D","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Keep-the Board of Selectmen and Board of Finance fully advised of the financial condition of the Town;","revision":"0","bag":"default"}
+,
+{"title":"Section701E","caption":"Section 701E. Removal of the Town Administrator","chapter":"7","created":"20241110005852166","modified":"20241110005938649","section":"701","subsection":"E","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"\u003C\u003Csub-subsections 701 E>>","revision":"0","bag":"default"}
+,
+{"title":"Section701E(1)","caption":"Section 701E(1)","chapter":"7","created":"20241110005944590","modified":"20241110010028314","section":"701","sub-subsection":"1","subsection":"E","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"The Town Administrator may be removed by a four-fifths (80%) vote of the entire membership of the Board of Selectmen. At least thirty (30) days before the proposed removal of the Administrator, the Board of Selectmen shall adopt a resolution stating their intention to remove the Town Administrator and the reasons therefor. A copy of the resolution shall be served on the Administrator who may, within ten (10) days, demand a public hearing. In this event, the Administrator shall not be removed until such public hearing has been held. Upon the passage of such a resolution, the Board of Selectmen may suspend the Town Administrator from duty provided that the salary of the Administrator shall continue until removal from office. Any action of the Board of Selectmen in removing the Administrator shall be final.","revision":"0","bag":"default"}
+,
+{"title":"Section701E(2)","caption":"Section 701E(2)","chapter":"7","created":"20241110010050792","modified":"20241110010131259","section":"701","sub-subsection":"2","subsection":"E","tags":"Sub-subsection","type":"text/vnd.tiddlywiki","text":"Upon the suspension, removal or resignation of the Town Administrator, the Board of Selectmen may appoint a temporary Administrator who shall be a qualified administrative officer to serve at the pleasure of the Board of Selectmen until a permanent replacement Town Administrator is appointed pursuant to this chapter of this Charter.","revision":"0","bag":"default"}
+,
+{"title":"Section702","caption":"Section 702. Administrative Positions.","chapter":"7","created":"20241110010218529","modified":"20241110010246687","section":"702","tags":"Section Chapter7","type":"text/vnd.tiddlywiki","text":"There shall be the following Administrative/Officer positions:\n\n\u003C\u003Csubsections 702>>","revision":"0","bag":"default"}
+,
+{"title":"Section702A","caption":"Section 702A","chapter":"7","created":"20241110010328887","modified":"20241110010452240","section":"702","subsection":"A","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Town Assessor - The Board of Selectmen shall appoint the Assessor who shall have all the powers and duties imposed and conferred by Connecticut General Statutes. Appointment shall be made from among the highest candidates chosen on the basis of competitive examination as provided in Section 701 of this charter, and this office shall have permanent status. The Assessor shall be a town employee subject to all rules and provisions of the Personnel Policies and his/her contract. Removal of the Assessor must be for just cause and confirmed. by affirmative vote of four-fifths (80%) of the entire Board of Selectmen.","revision":"0","bag":"default"}
+,
+{"title":"Section702B","caption":"Section 702B","chapter":"7","created":"20241110010620331","modified":"20241110010655437","section":"702","subsection":"B","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Building Official - The Board of Selectmen: shall appoint the Building Official who shall have all the powers and duties imposed and conferred by Connecticut General Statutes. Appointment shall be made from among the highest candidates chosen on the basis of competitive examination as provided in Section 701 of this charter, and this office shall have permanent status. The said officer shall be a town employee subject to all rules and provisions of the Personnel Policies and his/her contract. Removal must be for just cause and confirmed by affirmative vote of four- fifths (80%) of the entire Board of Selectmen.","revision":"0","bag":"default"}
+,
+{"title":"Section702C","caption":"Section 702C","chapter":"7","created":"20241110010804069","modified":"20241110010838042","section":"702","subsection":"C","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Municipal Agent for the Aging - The Board of Selectmen shall appoint a municipal agent for the aging.","revision":"0","bag":"default"}
+,
+{"title":"Section702D","caption":"Section 702D","chapter":"7","created":"20241110010841970","modified":"20241110011043116","section":"702","subsection":"D","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Director of Health - The Board of Selectmen shall appoint a Director of Health as mandated by the State of Connecticut. The Director of Health is employed part time subject to all rules and provisions of his/her contract. The said officer shall be compensated by stipend.","revision":"0","bag":"default"}
+,
+{"title":"Section702E","caption":"Section 702E","chapter":"7","created":"20241110011109061","modified":"20241110011141236","section":"702","subsection":"E","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"An Animal Control Officer - The Board of Selectmen shall appoint an Animal Control Officer. The said officer shall be employed part time.","revision":"0","bag":"default"}
+,
+{"title":"Section702F","caption":"Section 702F","chapter":"7","created":"20241110011145767","modified":"20241110011227923","section":"702","subsection":"F","tags":"Subsection","type":"text/vnd.tiddlywiki","text":" A Tree Warden - The Board of Selectmen may appoint a tree warden.","revision":"0","bag":"default"}
+,
+{"title":"Section702G","caption":"Section 702G","chapter":"7","created":"20241110011259692","modified":"20241110011328583","section":"702","subsection":"G","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Sanitarian/Wetlands Enforcement Officer - The Board of Selectmen shall appoint a Sanitarian/Wetlands Officer. The said officer is to be employed subject to all rules and provisions of his/her contract.","revision":"0","bag":"default"}
+,
+{"title":"Section702H","caption":"Section 702H","chapter":"7","created":"20241110011333947","modified":"20241110011414746","section":"702","subsection":"H","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Zoning Enforcement Officer - The Board of Selectmen shall by a majority vote of the entire Board appoint, and by a four-fifths (80%) vote of the entire Board be enabled to remove the Zoning Enforcement Officer, providing either action has been secured with the advice and consent of a majority of the members of the Planning and Zoning Commission in a meeting warned and held for such purpose. The Zoning Enforcement Officer shall have the powers and duties as are provided _ for such in the General Statutes, except as otherwise provided by this Charter.","revision":"0","bag":"default"}
+,
+{"title":"Section702I","caption":"Section 702I","chapter":"7","created":"20241110011420225","modified":"20241110011502755","section":"702","subsection":"I","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Treasurer - The Board of Selectmen shall appoint the Treasurer who shall have all the powers and duties imposed and conferred by Connecticut General Statutes. Appointment shall be made from among the highest candidates chosen on the basis of competitive examination as provided in Section 701 of this charter, and this office shall have permanent status. The Treasurer shall be a town employee subject to all rules and provisions of Personnel policies. Removal of the Treasurer must be for just cause and confirmed by affirmative vote of four-fifths (80%) of the entire Board of Selectmen.","revision":"0","bag":"default"}
+,
+{"title":"Section702J","caption":"Section 702J","chapter":"7","created":"20241110011539005","modified":"20241110011713947","section":"702","subsection":"J","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Town Attorney - The town attorney shall be an attorney-at-law, or a firm of _ attorneys-at-law, admitted to practice in this State, who shall serve for a two (2) year term of office commencing on the first day of July following the Town election 1999 and thereafter, biennially, in odd numbered years. He shall appear for and protect the rights of the Town in all actions, suits or proceedings brought by or against it or any officers, employees or agencies acting in the course of duty in all matters affecting the Town. He shall, upon written request of the First Selectman or Board of Selectmen, provide a written opinion to any official of the Town on any question of law involving their respective powers and duties. He Shall, upon request of the First Selectman or the Board of Selectmen, prepare or approve forms or contracts or other instruments to which the Town is a party. He shall have the power, with the approval of the Board of Selectmen, to compromise and/or settle all claims by or against the Town. Upon request of the Board of Selectmen, he shall attend Town Meetings. Nothing in this section shall prevent the Selectmen, the Board of Education, the Planning and Zoning Commission, or the Zoning Board of Appeals from retaining Special Counsel when the needs of the Town so require. The Board of Selectmen shall on an annual basis conduct a review of the work of the Town Attorney.","revision":"0","bag":"default"}
+,
+{"title":"Section702K","caption":"Section 702K","chapter":"7","created":"20241110011724039","modified":"20241110011840827","section":"702","subsection":"K","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Town Engineer - The Board of Selectmen may appoint a Town Engineer or may retain the services of a professional engineer licensed in the State of Connecticut to assist in matters of engineering, road and drainage matters and such other matters as they may determine.","revision":"0","bag":"default"}
+,
+{"title":"Section702L","caption":"Section 702L","chapter":"7","created":"20241110011857113","modified":"20241110011917370","section":"702","subsection":"L","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Police Service.- The Town may utilize the services of the resident state trooper program.","revision":"0","bag":"default"}
+,
+{"title":"Section702M","caption":"Section 702M","chapter":"7","created":"20241110011921853","modified":"20241110012006908","section":"702","subsection":"M","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"Public Works Maintenance Team Leader - The Board of Selectmen shall appoint the Public Works Maintenance team leader who shall have all the powers and duties imposed and conferred by Connecticut General Statutes. Appointment shall be made from among the highest candidates chosen on the basis of competitive examination as provided in Section 701 of this Charter, and this office shall have permanent status. The said officer shall be compensated on an hourly basis. The public works maintenance team leader shall be a town employee subject to all rules and provisions of Personnel Policies. Removal must be for just cause and confirmed by affirmative vote of four-fifths (30%) of the entire Board of Selectmen.","revision":"0","bag":"default"}
+,
+{"title":"Section702N","caption":"Section 702N","chapter":"7","created":"20241110012011715","modified":"20241110012146096","section":"702","subsection":"N","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Tax Collector - The Board of Selectmen shall appoint the Tax Collector who shall have all the powers and duties imposed and conferred: by Connecticut General Statutes. Appointment shall be made from among the highest candidates chosen on the basis of competitive examination as provided in Section 701 of this Charter, and this office shall have permanent status. The said officer shall be compensated on a salary basis only. The Tax Collector shall be a town employee subject to all rules and provisions of Personnel Policies. Removal of the Tax Collector must be for just cause and confirmed by affirmative vote of four-fifths (80%) of the entire Board of Selectmen.","revision":"0","bag":"default"}
+,
+{"title":"Section702O","caption":"Section 702O","chapter":"7","created":"20241110012148483","modified":"20241110012322808","section":"702","subsection":"O","tags":"Subsection","type":"text/vnd.tiddlywiki","text":"A Town Clerk Section","revision":"0","bag":"default"}
+,
+{"title":"Section703","caption":"703. Additional Officers and Employees.","chapter":"7","created":"20241110012420007","modified":"20241110012456674","section":"703","tags":"Section Chapter7","type":"text/vnd.tiddlywiki","text":"The Board of Selectman, subject to the approval of the Town, Meeting, may appoint such additional officers, as the needs of the Town require, subject to budgetary appropriations.","revision":"0","bag":"default"}
 ,
 {"title":"TableOfContents","caption":"Contents","created":"20180926191321993","list":"Admin Welcome [[2023 Slate]] [[Democratic Town Committee]] [[Candidate Bios]] [[Print Brochure]] [[Elected Positions]] Voting Meeting Campaign Person [[Lawn Sign]] Data Legal Miscellaneous [[Search Voters]]","modified":"20241109170431969","tags":"$:/tags/SideBar","type":"text/vnd.tiddlywiki","text":"\u003Cdiv class=\"tc-table-of-contents\">\n\n\u003C\u003Ctoc-selective-expandable \"TableOfContents\" exclude:\"[has[excludeTOC]]\" >>\n\n\u003C/div>\n","revision":"0","bag":"default"}
 ,
