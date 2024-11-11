@@ -1,6 +1,6 @@
 {
   "name": "AndoverCharter2022",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Online version of Andover's charter, 2022 edition",
   "main": "index.js",
   "scripts": {

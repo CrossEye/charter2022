@@ -1,14 +1,14 @@
 created: 20241109191515974
-modified: 20241109215821565
+modified: 20241111040927094
 tags: $:/tags/Global
 title: $:/_/atc/procedures/Section
 type: text/vnd.tiddlywiki
 
-\procedure Section(sect) <$link to={{{ [[Section]] [<sect>] +[join[]] }}} >Section <<sect>></$link>
+\procedure Section(sect) <$link class="section-link" to={{{ [[Section]] [<sect>] +[join[]] }}} >Section <<sect>></$link>
 
-\procedure section(sect) <$link to={{{ [[Section]] [<sect>] +[join[]] }}} >section <<sect>></$link>
+\procedure section(sect) <$link class="section-link" to={{{ [[Section]] [<sect>] +[join[]] }}} >section <<sect>></$link>
 
-\procedure sec(sect) <$link to={{{ [[Section]] [<sect>] +[join[]] }}} ><<sect>></$link>
+\procedure sec(sect) <$link class="section-link" to={{{ [[Section]] [<sect>] +[join[]] }}} ><<sect>></$link>
 
 
 A few simple procs for links to various sections, subsections, and sub-subsections:
